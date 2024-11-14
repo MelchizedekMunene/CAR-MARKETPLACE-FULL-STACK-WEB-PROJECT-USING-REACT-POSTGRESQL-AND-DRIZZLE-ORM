@@ -39,7 +39,7 @@ export default {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
-  				DEFAULT: 'hsl(var(--card))',
+  				DEFAULT: '#405ef2',
   				foreground: 'hsl(var(--card-foreground))'
   			},
   			popover: {

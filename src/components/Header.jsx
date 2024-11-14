@@ -1,6 +1,7 @@
 import { UserButton, useUser } from '@clerk/clerk-react'
 import React from 'react'
-import { Button } from './button';
+import { Button } from './ui/button';
+
 
 
 function Header() {
@@ -38,7 +39,6 @@ function Header() {
     {isSignedIn?
       <div className='flex items-center gap-5'>
         <UserButton/>
-        
         <Button>Submit Listing</Button>
       </div>
       :<Button>Submit Listing</Button>
