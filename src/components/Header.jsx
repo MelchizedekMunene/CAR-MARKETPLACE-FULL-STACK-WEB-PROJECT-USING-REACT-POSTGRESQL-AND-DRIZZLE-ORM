@@ -1,15 +1,13 @@
-import { UserButton, useUser } from '@clerk/clerk-react'
+import { UserButton, useUser, SignInButton } from '@clerk/clerk-react'
 import React from 'react'
 import { Button } from './ui/button';
 
-
-
 function Header() {
-  const {user, isSignedIn}=useUser();
+  const {user, isSignedIn} = useUser();
   return (
     <div className='flex justify-between items-center shadow-sm p-5'>
-    {/* Logo */}
-    <div className='logo'>
+      {/* Logo */}
+      <div className='logo'>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width={95} height={65}>
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -28,22 +26,28 @@ function Header() {
           <path fill="url(#gradient)" d="M346.75,298.87c0,16.56-13.44,30-30,30s-30-13.44-30-30s13.44-30,30-30S346.75,282.31,346.75,298.87z"/>
         </g>
       </svg>
-    </div>
-    <ul className='flex gap-16'>
-      <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>Home</li>
-      <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>Search</li>
-      <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>New</li>
-      <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>Pre-Owned</li>
-    </ul>
-
-    {isSignedIn?
-      <div className='flex items-center gap-5'>
-        <UserButton/>
-        <Button>Submit Listing</Button>
       </div>
-      :<Button>Submit Listing</Button>
-    }
+      
+      <ul className='flex gap-16'>
+        <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>Home</li>
+        <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>Search</li>
+        <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>New</li>
+        <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>Pre-Owned</li>
+      </ul>
 
+      {isSignedIn ? (
+        <div className='flex items-center gap-5'>
+          <UserButton/>
+          <Button>Submit Listing</Button>
+        </div>
+      ) : (
+        <div className='flex items-center gap-5'>
+          <SignInButton mode="modal">
+            <Button variant="ghost">Sign In</Button>
+          </SignInButton>
+          <Button>Submit Listing</Button>
+        </div>
+      )}
     </div>
   )
 }
