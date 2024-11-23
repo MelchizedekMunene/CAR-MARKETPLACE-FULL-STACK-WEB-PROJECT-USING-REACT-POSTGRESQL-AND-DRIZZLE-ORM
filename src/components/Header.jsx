@@ -38,14 +38,14 @@ function Header() {
       {isSignedIn ? (
         <div className='flex items-center gap-5'>
           <UserButton/>
-          <Button>Submit Listing</Button>
+          <Button>Search</Button>
         </div>
       ) : (
         <div className='flex items-center gap-5'>
           <SignInButton mode="modal">
             <Button variant="ghost">Sign In</Button>
           </SignInButton>
-          <Button>Submit Listing</Button>
+          <Button>Search</Button>
         </div>
       )}
     </div>
