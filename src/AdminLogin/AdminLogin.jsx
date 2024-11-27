@@ -25,7 +25,7 @@ function AdminLogin() {
       // Store admin status in localStorage
       localStorage.setItem('isAdmin', 'true');
       // Navigate to submit listing page
-      navigate('/profile'); // Make sure this route exists
+      navigate('/profile'); 
     } else {
       setError('Invalid admin credentials. Please try again.');
     }
