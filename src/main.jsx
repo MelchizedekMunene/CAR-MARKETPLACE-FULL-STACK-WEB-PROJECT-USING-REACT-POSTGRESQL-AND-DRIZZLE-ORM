@@ -44,6 +44,6 @@ createRoot(document.getElementById('root')).render(
      <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
     <RouterProvider router={router}/>
     </ClerkProvider>
-  </StrictMode>,
+  </StrictMode>
 )
 

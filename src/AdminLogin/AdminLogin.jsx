@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Lock } from "lucide-react";
-import Header from '@/components/Header';
 
 
 function AdminLogin() {
@@ -33,7 +32,6 @@ function AdminLogin() {
 
   return (
     <div>
-      <Header/>
       <div className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
         <Card className="w-full max-w-md mx-4  bg-green-400">
           <CardHeader className="space-y-1">

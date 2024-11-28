@@ -8,13 +8,12 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
-  import { Textarea } from "@/components/ui/textarea"
 
-
-function DropdownField({item}) {
+  
+function DropdownField({item,handleInputChange}) {
   return (
     <div>
-        <Select>
+        <Select onValueChange={(value)=>handleInputChange(item.name,value)}>
         <SelectTrigger className="w-full">
             <SelectValue placeholder={item?.label} />
         </SelectTrigger>
