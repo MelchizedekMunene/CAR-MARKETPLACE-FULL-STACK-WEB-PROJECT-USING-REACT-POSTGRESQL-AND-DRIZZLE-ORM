@@ -3,7 +3,7 @@ import React from 'react'
 
 function InputField({item}) {
   return (
-    <div className='grid grid-cols-3 md:grid-cols-4'>
+    <div>
       <Input type={item?.fieldType} name={item?.name} required={item?.required}/>
     </div>
   )
