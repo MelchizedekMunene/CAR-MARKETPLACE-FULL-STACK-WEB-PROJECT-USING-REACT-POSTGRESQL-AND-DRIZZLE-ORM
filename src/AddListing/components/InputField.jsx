@@ -7,7 +7,7 @@ function InputField({item,handleInputChange}) {
       <Input type={item?.fieldType} 
       name={item?.name} 
       required={item?.required}
-      onChange={(e)=>handleInputChange(item.name,e.target.value)}
+      onChange={(e)=>handleInputChange(item?.name,e.target.value)}
       />
     </div>
   )

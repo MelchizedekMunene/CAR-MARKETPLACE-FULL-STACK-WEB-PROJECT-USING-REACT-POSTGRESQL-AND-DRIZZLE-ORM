@@ -11,18 +11,21 @@ import { Button } from '@/components/ui/button';
 
 function AddListing() {
 
-  const [formData, setFormData] = useState([]);
+      const [formData,setFormData] = useState({});
 
-  console.log("handleInputChange in AddListing:", handleInputChange);
+      const handleInputChange=(name,value)=>{
+        setFormData((prevData)=>({
+          ...prevData,
+          [name]:value
+        }))
+        
+        console.log(formData);
+      }
 
-
-  const handleInputChange = (name, value) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }))
-
-  }
+      const onSubmit=(e)=>{
+        e.preventDefault();
+        console.log(formData);
+      }
 
 
   return (
@@ -59,7 +62,7 @@ function AddListing() {
               <div className='grid grid-cols-2 md:grid-cols-3 gap-2'>
                 {features.features.map((item,index)=> (
                   <div key={index} className='flex gap-2 items-center'>
-                    <Checkbox onCheckedChange={(value)=>handleInputChange(item.name,value)}/> <h2>{item.label}</h2>
+                    <Checkbox onCheckedChange={(value)=>handleInputChange(item?.name,value)}/> <h2>{item.label}</h2>
                   </div>
                 ))}
               </div>
@@ -67,7 +70,7 @@ function AddListing() {
           {/*Car Images*/}
 
           <div className='mt-10 flex justify-end'>
-            <Button>Submit</Button>
+            <Button type="submit" onClick={(e)=>onSubmit(e)}>Submit</Button>
           </div>
 
         </form> 
