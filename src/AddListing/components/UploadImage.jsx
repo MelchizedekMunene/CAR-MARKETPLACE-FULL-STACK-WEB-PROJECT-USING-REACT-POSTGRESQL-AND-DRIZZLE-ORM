@@ -1,6 +1,6 @@
 import React from 'react'
 
-function uploadImage() {
+function UploadImage() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function uploadImage() {
   )
 }
 
-export default uploadImage
+export default UploadImage
